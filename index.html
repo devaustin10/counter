@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Counter App</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="counter-card">
-        <div class="title">
-            Counter
-        </div>
-        <div class="number">
-            100
-        </div>
-        <div class="buttons">
-            <button class="decrease">
-                Decrease
-            </button>
-            <button class="reset">
-                Reset
-            </button>
-            <button class="increase">
-                Increase
-            </button>
-        </div>
+      <div class="title">Counter</div>
+      <div class="number">0</div>
+      <div class="buttons">
+        <button class="decrease">Decrease</button>
+        <button class="reset">Reset</button>
+        <button class="increase">Increase</button>
+      </div>
     </div>
 
-    
     <script>
+      let currentCount = 0;
 
-        var count = document.querySelector(".number")
+      let count = document.querySelector(".number");
+      let increase = document.querySelector(".increase");
+      let decrease = document.querySelector(".decrease");
+      let reset = document.querySelector(".reset");
 
+      increase.addEventListener("click", () => {
+        currentCount++;
+        count.textContent = currentCount;
+      });
+
+      decrease.addEventListener("click", () => {
+        currentCount--;
+        count.textContent = currentCount;
+      });
+
+      reset.addEventListener("click", () => {
+        currentCount = 0;
+        count.textContent = currentCount;
+      });
     </script>
-</body>
+  </body>
 </html>
